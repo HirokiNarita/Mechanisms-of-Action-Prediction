@@ -63,9 +63,6 @@ sample_submission.csv - A submission file in the correct format.
         * MLPのベースライン提出
         * discussionの確認
 - 10/15(木)
-    -今日やったこと
+    - 今日やったこと
         * 実験環境とベースライン作成(途中)
-        * ctl_vehicleのラベルは全てゼロなので、predictはしないほうが良さそう。
-    -次やること
-        * MLPのベースライン提出
-        * discussionの確認
+        * ディスカッションよんだ
