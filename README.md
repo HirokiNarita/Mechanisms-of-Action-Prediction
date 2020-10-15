@@ -55,11 +55,11 @@ sample_submission.csv - A submission file in the correct format.
 - ctl_vehicleのラベルは全てゼロなので、predictはしないほうが良さそう。
 ## diary
 - 10/14(水)
-    -今日やったこと
+    - 今日やったこと
         * 初回キックオフMTG
         * タスクの確認と目的の設定
         * 毎週火曜日 22:00　にMTGを決定
-    -次やること
+    - 次やること
         * MLPのベースライン提出
         * discussionの確認
 - 10/15(木)
