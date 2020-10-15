@@ -1,0 +1,3 @@
+IO_OPTION:
+  INPUT_ROOT: '/media/hiroki/working/kaggle/Mechanisms-of-Action-Prediction/datasets'
+  OUTPUT_ROOT: '/media/hiroki/working/kaggle/Mechanisms-of-Action-Prediction/working/experiment/MLP/baseline/out_dir'

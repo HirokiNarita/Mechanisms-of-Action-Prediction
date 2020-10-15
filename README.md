@@ -23,9 +23,16 @@ sample_submission.csv - A submission file in the correct format.
 トレーニングデータには、テストデータには含まれず、スコアリングには使用されないMoAラベルの追加（オプション）セットがある
 再実行データセットは、パブリックテストで見られる例の約4倍の数を持つ
 ### ファイル
-- train_features.csv - 訓練セットの特徴量．cp_type は化合物（cp_vehicle）または対照摂動（ctrl_vehicle）で処理されたサンプルを示し、対照摂動は MoA を持たない
+- train_features.csv - train_features.csv - 訓練セットの特徴量．g-は遺伝子発現データ，c-は細胞生存率データを示す． cp_typeは化合物（cp_vehicle）または対照摂動（ctrl_vehicle）で処理されたサンプルを示す；対照摂動はMoAsを持たない；cp_timeとcp_doseは処理時間（24, 48, 72時間）と投与量（高または低）を示す．
+    * g-接頭辞を持つ特徴量は遺伝子発現特徴量であり、その数は772個（g-0からg-771まで）ある
+    * c-接頭辞を持つ特徴量は細胞生存率の特徴量であり、その数は100個（c-0からc-99まで）ある
+    * cp_typeは，サンプルが化合物で処理されたか，対照摂動（rt_cpまたはctl_vehicle）で処理されたかを示す2値のカテゴリ特徴量
+    * cp_timeは，治療期間（24時間，48時間，72時間）を示す分類的特徴量
+    * cp_doseは，投与量が低いか高いかを示す2値のカテゴリ特徴量である(D1またはD2)．
 - train_targets_scored.csv - スコアされるバイナリMoAターゲット
+    * Number of Scored Target Features: 206
 - train_targets_nonscored.csv - 訓練データの追加の（オプションの）バイナリMoA反応。これらは予測もスコア化もされない
+    * Number of Non-scored Target Features: 402
 - test_features.csv - テストデータの特徴量．テストデータの各行のスコアされたMoAの確率を予測する必要がある
 - sample_submission.csv - 正しい形式の提出ファイル
 
@@ -33,4 +40,32 @@ sample_submission.csv - A submission file in the correct format.
 各カラムにおけるバイナリクロスエントロピーを計算しその平均値を、すべてのサンプルで平均した値
 
 ## ToDo
+- Multi Label問題であるが、Multi Class問題として捉える[https://www.kaggle.com/c/lish-moa/discussion/180500](https://www.kaggle.com/c/lish-moa/discussion/180500)
+    * MoAのコンテキストでは、ちょうど2つのMoAが活性化されている1538個のsig_idがあり、これらは96の異なる組み合わせで(たった？)現れます。
+    * 206 + 96 = 302クラスを使ってマルチクラスを行うことができます。(ただし、trainにない組み合わせになると、トリッキーになる。)
+
+## On Going
 - 
+## Done
+- 
+
+## memo
+- iterative-stratification(sklearn likeな層化抽出ライブラリ)[https://github.com/trent-b/iterative-stratification](https://github.com/trent-b/iterative-stratification)
+    * MultilabelStratifiedKFoldというMulti Label用の層化抽出法がある
+- ctl_vehicleのラベルは全てゼロなので、predictはしないほうが良さそう。
+## diary
+- 10/14(水)
+    -今日やったこと
+        * 初回キックオフMTG
+        * タスクの確認と目的の設定
+        * 毎週火曜日 22:00　にMTGを決定
+    -次やること
+        * MLPのベースライン提出
+        * discussionの確認
+- 10/15(木)
+    -今日やったこと
+        * 実験環境とベースライン作成(途中)
+        * ctl_vehicleのラベルは全てゼロなので、predictはしないほうが良さそう。
+    -次やること
+        * MLPのベースライン提出
+        * discussionの確認
