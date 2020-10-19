@@ -67,3 +67,6 @@ sample_submission.csv - A submission file in the correct format.
     - 今日やったこと
         * 実験環境とベースライン作成(実行まだしてない)
         * ディスカッションよんだ
+- 10/19(月)
+    - 今日やったこと
+        * ベースラインと提出用ノートブック作成（完成）
