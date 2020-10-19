@@ -40,19 +40,16 @@ sample_submission.csv - A submission file in the correct format.
 各カラムにおけるバイナリクロスエントロピーを計算しその平均値を、すべてのサンプルで平均した値
 
 ## ToDo
-- Multi Label問題であるが、Multi Class問題として捉える[https://www.kaggle.com/c/lish-moa/discussion/180500](https://www.kaggle.com/c/lish-moa/discussion/180500)
-    * MoAのコンテキストでは、ちょうど2つのMoAが活性化されている1538個のsig_idがあり、これらは96の異なる組み合わせで(たった？)現れます。
-    * 206 + 96 = 302クラスを使ってマルチクラスを行うことができます。(ただし、trainにない組み合わせになると、トリッキーになる。)
-
+- Multi Label問題であるが、Multi Class問題として捉える[URL](https://www.kaggle.com/c/lish-moa/discussion/180500)
+- 次元圧縮したときにスコアがどの程度変わるか確認（接頭辞が同じものについては、相関が非常に高いため）
+- scored,unscoredのlabelを全て使って学習、transfer-learning or fine-tuning
 ## On Going
 - 
 ## Done
 - 
 
 ## memo
-- iterative-stratification(sklearn likeな層化抽出ライブラリ)[https://github.com/trent-b/iterative-stratification](https://github.com/trent-b/iterative-stratification)
-    * MultilabelStratifiedKFoldというMulti Label用の層化抽出法がある
-- ctl_vehicleのラベルは全てゼロなので、predictはしないほうが良さそう。
+
 ## diary
 - 10/14(水)
     - 今日やったこと
@@ -65,4 +62,8 @@ sample_submission.csv - A submission file in the correct format.
 - 10/15(木)
     - 今日やったこと
         * 実験環境とベースライン作成(途中)
+        * ディスカッションよんだ
+- 10/18(日)
+    - 今日やったこと
+        * 実験環境とベースライン作成(実行まだしてない)
         * ディスカッションよんだ
