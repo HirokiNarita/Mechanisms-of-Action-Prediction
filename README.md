@@ -63,10 +63,12 @@ sample_submission.csv - A submission file in the correct format.
 - [ ] ノンスコアのターゲットを予測し、その後のモデルのメタ特徴として使用
 - [ ] ノンスコアのターゲットも含めたモデルで学習する
 ## Done
-- [x] MLP baseline
+- [x] baseline MLP
+    * CV : 0.015842093180158456
+    * Public : Public : 0.01979
+- [x] Maxout MLP
     * CV : 0.015528392642207555
     * Public : 0.01930
-
 ## my task
 - [ ] カテゴリ変数を埋め込み特徴量として学習
 - [ ] AEでデノイズor中間層を特徴量に追加(Nakayamaさんこれ好きなイメージ)
