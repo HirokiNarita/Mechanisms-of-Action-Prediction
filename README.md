@@ -40,33 +40,34 @@ sample_submission.csv - A submission file in the correct format.
 各カラムにおけるバイナリクロスエントロピーを計算しその平均値を、すべてのサンプルで平均した値
 
 ## ToDo
-- Multi Label問題であるが、Multi Class問題として捉える[URL](https://www.kaggle.com/c/lish-moa/discussion/180500)
-- 次元圧縮したときにスコアがどの程度変わるか確認（接頭辞が同じものについては、相関が非常に高いため）
-- scored,unscoredのlabelを全て使って学習、transfer-learning or fine-tuning
+- [ ] ノンスコアのターゲットを予測し、その後のモデルのメタ特徴として使用
+- [ ] ノンスコアのターゲットも含めたモデルで学習する
+- [ ] カテゴリ変数を埋め込み特徴量として学習
+- [ ] AEでデノイズor中間層を特徴量に追加(Nakayamaさんこれ好きなイメージ)
+- [ ] メトリックラーニングをAEに適応して、他のモデルの特徴量にする (クラスタリングの重心を特徴量に加えるイメージ)
+- [ ] Multi Label問題であるが、Multi Class問題として捉える[URL](https://www.kaggle.com/c/lish-moa/discussion/180500)
+- [https://www.kaggle.com/c/lish-moa/discussion/184005](https://www.kaggle.com/c/lish-moa/discussion/184005)
+* データの前処理
+- [ ] label smooth
+- [ ] トレーニングデータからコントロールグループを削除するとCV上がるらしい.LBは下がるけどブレンドするとLBもup
+- [ ] pretictのlowerとupperをclip
+- [ ] コントロールの出力を全て確認。もしかしたらすべて0かも
+- [ ] Pseudolabeling
+- [ ] バランシングの適応 (優先順位低め)
+- [ ] アップサンプリング[https://www.kaggle.com/c/lish-moa/discussion/187419](https://www.kaggle.com/c/lish-moa/discussion/187419)
+    * [ノートブック](https://www.kaggle.com/tolgadincer/upsampling-multilabel-data-with-mlsmote)
+    * [CVの方法のノートブック](https://www.kaggle.com/tolgadincer/mlsmote) (優先順位低め)
+- [ ] ImbalancedDataSampler[pytorchの実装github]
+
 ## On Going
-- 
+- [ ] ノンスコアのターゲットを予測し、その後のモデルのメタ特徴として使用
+- [ ] ノンスコアのターゲットも含めたモデルで学習する
 ## Done
-- 
+- [x] MLP baseline
+    * CV : 0.015528392642207555
+    * Public : 0.01930
 
-## memo
-
-## diary
-- 10/14(水)
-    - 今日やったこと
-        * 初回キックオフMTG
-        * タスクの確認と目的の設定
-        * 毎週火曜日 22:00　にMTGを決定
-    - 次やること
-        * MLPのベースライン提出
-        * discussionの確認
-- 10/15(木)
-    - 今日やったこと
-        * 実験環境とベースライン作成(途中)
-        * ディスカッションよんだ
-- 10/18(日)
-    - 今日やったこと
-        * 実験環境とベースライン作成(実行まだしてない)
-        * ディスカッションよんだ
-- 10/19(月)
-    - 今日やったこと
-        * ベースラインと提出用ノートブック作成（完成）
+## my task
+- [ ] カテゴリ変数を埋め込み特徴量として学習
+- [ ] AEでデノイズor中間層を特徴量に追加(Nakayamaさんこれ好きなイメージ)
+- [ ] メトリックラーニングをAEに適応して、他のモデルの特徴量にする (クラスタリングの重心を特徴量に加えるイメージ)
